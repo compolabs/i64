@@ -2,8 +2,8 @@ library;
 use std::u128::U128;
 
 pub struct I64 {
-    value: u64,
-    negative: bool,
+    pub value: u64,
+    pub negative: bool,
 }
 
 impl From<u64> for I64 {
