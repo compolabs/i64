@@ -7,16 +7,14 @@ pub struct I64 {
 }
 
 impl From<u64> for I64 {
-    fn from(value: u64) -> Self {
-        Self {value, negative: false}
+    fn from(b: u64) -> Self {
+        Self {value: b, negative: false}
     }
+}
 
-    fn into(self) -> u64 {
-        if !self.negative {
-            self.value
-        } else {
-            revert(0)
-        }
+impl From<I64> for u64 {
+    fn from(b: I64) -> u64 {
+        if !b.negative {b.value} else {revert(0)}
     }
 }
 
